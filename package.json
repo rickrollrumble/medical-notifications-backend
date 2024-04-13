@@ -20,8 +20,12 @@
   },
   "homepage": "https://github.com/rickrollrumble/medical-notifications-backend#readme",
   "dependencies": {
+    "@types/express-validator": "^3.0.0",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
+    "express-validator": "^7.0.1",
+    "install": "^0.13.0",
+    "npm": "^10.5.2",
     "typescript": "^5.4.5"
   },
   "devDependencies": {
