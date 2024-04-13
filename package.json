@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node out/index.js",
+    "dev": "nodemon src/index.ts",
+    "build": "tsc --project tsconfig.json"
   },
   "repository": {
     "type": "git",
@@ -18,11 +21,14 @@
   "homepage": "https://github.com/rickrollrumble/medical-notifications-backend#readme",
   "dependencies": {
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "typescript": "^5.4.5"
   },
   "devDependencies": {
     "@types/express": "^4.17.21",
     "@types/node": "^20.12.7",
-    "typescript": "^5.4.5"
+    "nodemon": "^3.1.0",
+    "ts-node": "^10.9.2",
+    "tslog": "^4.9.2"
   }
 }
