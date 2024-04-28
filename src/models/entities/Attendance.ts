@@ -6,12 +6,12 @@ export class Attendance {
     @PrimaryGeneratedColumn()
     id: string;
 
-    @Column("status")
-    Statun: number;
+    @Column({ name: "status", type: "int" })
+    Status: number;
 
-    @Column("personId")
+    @Column({ name: "personId", type: "int" })
     PersonId: number;
 
-    @Column("loggedAT")
+    @Column({ name: "loggedAt", type: "timestamp", default: "CURRENT_TIMESTAMP" })
     LoggedAt: string;
 }

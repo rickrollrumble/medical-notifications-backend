@@ -5,15 +5,15 @@ export class Person {
     @PrimaryGeneratedColumn("increment", { name: "id" })
     id: number;
 
-    @Column("firstName")
+    @Column({ name: "firstName", type: "varchar" })
     FirstName: string;
 
-    @Column("middleName")
+    @Column({ name: "middleName", type: "varchar" })
     MiddleName: string;
 
-    @Column("lastName")
+    @Column({ name: "lastName", type: "varchar" })
     LastName: string;
 
-    @Column("createdAt")
+    @Column({ name: "createdAt", type: "varchar" })
     CreatedAt: string;
 }

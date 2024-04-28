@@ -1,9 +1,9 @@
 import { MigrationInterface, QueryRunner, Table, TableForeignKey } from "typeorm";
 
-export class FirstRun1713752472055 implements MigrationInterface {
+
+export default class FirstRun1713752472055 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.createDatabase('medman-admin', true);
         await queryRunner.createTable(new Table({
             name: "person",
             columns: [

@@ -1,6 +1,7 @@
 import { DataSource } from 'typeorm';
+import { DataSourceOptions } from 'typeorm/browser';
 
-export default new DataSource({
+export const dataSourceOptions: DataSourceOptions = {
     type: 'mysql',
     host: 'localhost',
     port: 3306,
@@ -9,4 +10,6 @@ export default new DataSource({
     database: 'medman-admin',
     entities: ['src/models/entities/**/*.ts'],
     migrations: ['migrations/**/*.ts'],
-});
+};
+
+export default new DataSource(dataSourceOptions);
