@@ -7,26 +7,26 @@ export default class FirstRun1713752472055 implements MigrationInterface {
         await queryRunner.createTable(new Table({
             name: "person",
             columns: [
-                { name: "id", isPrimary: true, generationStrategy: "increment", type: "int" },
+                { name: "id", isPrimary: true, generationStrategy: "increment", type: "int", isGenerated: true },
                 { name: "firstName", isPrimary: false, isNullable: false, type: "varchar" },
                 { name: "middleName", isPrimary: false, isNullable: false, type: "varchar" },
                 { name: "lastName", isPrimary: false, isNullable: false, type: "varchar" },
-                { name: "createdAt", type: "timestamp", default: "now()" }
+                { name: "createdAt", type: "timestamp", default: "now()", isGenerated: true }
             ]
         }), true);
 
         await queryRunner.createTable(new Table({
             name: "attendance",
             columns: [
-                { name: "id", isPrimary: true, generationStrategy: "increment", type: "int" },
+                { name: "id", isPrimary: true, generationStrategy: "increment", type: "int", isGenerated:true },
                 { name: "status", isNullable: false, type: "tinyint", default: 1 },
                 { name: "personId", type: "int", isNullable: false },
-                { name: "loggedAt", type: "timestamp", default: "now()" }
+                { name: "loggedAt", type: "timestamp", default: "now()", isGenerated:true }
             ]
         }), true);
 
         await queryRunner.createForeignKey("attendance", new TableForeignKey({
-            columnNames: ["personid"],
+            columnNames: ["personId"],
             referencedColumnNames: ["id"],
             "referencedTableName": "person",
             "onDelete": "CASCADE",

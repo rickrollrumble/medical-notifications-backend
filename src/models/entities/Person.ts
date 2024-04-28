@@ -1,4 +1,4 @@
-import { Entity, PrimaryGeneratedColumn, Column } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class Person {
@@ -14,6 +14,6 @@ export class Person {
     @Column({ name: "lastName", type: "varchar" })
     LastName: string;
 
-    @Column({ name: "createdAt", type: "varchar" })
-    CreatedAt: string;
+    @CreateDateColumn({ name: "createdAt", type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+    CreatedAt: Date;
 }

@@ -1,10 +1,10 @@
-import { Entity, Column, PrimaryGeneratedColumn } from "typeorm";
+import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
 
 @Entity()
 export class Attendance {
 
     @PrimaryGeneratedColumn()
-    id: string;
+    id: number;
 
     @Column({ name: "status", type: "int" })
     Status: number;
@@ -12,6 +12,6 @@ export class Attendance {
     @Column({ name: "personId", type: "int" })
     PersonId: number;
 
-    @Column({ name: "loggedAt", type: "timestamp", default: "CURRENT_TIMESTAMP" })
-    LoggedAt: string;
+    @CreateDateColumn({ name: "loggedAt", type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
+    LoggedAt: Date;
 }
