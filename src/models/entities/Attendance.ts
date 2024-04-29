@@ -1,4 +1,5 @@
-import { Entity, Column, PrimaryGeneratedColumn, CreateDateColumn } from "typeorm";
+import { Entity, PrimaryGeneratedColumn, Column, ManyToOne, CreateDateColumn } from "typeorm";
+import { Person } from "./Person";
 
 @Entity()
 export class Attendance {
@@ -9,8 +10,8 @@ export class Attendance {
     @Column({ name: "status", type: "int" })
     Status: number;
 
-    @Column({ name: "personId", type: "int" })
-    PersonId: number;
+    @ManyToOne((type)=>Person, (person)=>person.id)
+    PersonId: Person;
 
     @CreateDateColumn({ name: "loggedAt", type: "timestamp", default: () => "CURRENT_TIMESTAMP" })
     LoggedAt: Date;
