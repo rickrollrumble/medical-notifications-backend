@@ -17,6 +17,6 @@
    },
    "scripts": {
       "start": "node --loader ts-node/esm src/index.ts",
-      "typeorm": "typeorm-ts-node-esm"
+      "typeorm": "typeorm-ts-node-esm -d src/data-source.ts"
    }
 }
