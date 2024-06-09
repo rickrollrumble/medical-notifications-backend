@@ -1,44 +1,22 @@
 {
-  "name": "medical-notifications-backend",
-  "version": "1.0.0",
-  "description": "",
-  "main": "out/index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node out/index.js" ,
-    "dev": "nodemon src/index.ts",
-    "build": "tsc --project tsconfig.json",
-    "lint": "eslint  --ignore-pattern node_modules/ --ignore-pattern out/",
-    "typeorm": "typeorm-ts-node-esm -d ./src/datasource.ts"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/rickrollrumble/medical-notifications-backend.git"
-  },
-  "author": "Rahul Ramachandran",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/rickrollrumble/medical-notifications-backend/issues"
-  },
-  "homepage": "https://github.com/rickrollrumble/medical-notifications-backend#readme",
-  "dependencies": {
-    "dotenv": "^16.4.5",
-    "express": "^4.19.2",
-    "typeorm": "^0.3.20",
-    "typeorm-extension": "^3.5.1",
-    "typescript": "^5.4.5"
-  },
-  "devDependencies": {
-    "@eslint/js": "^9.1.1",
-    "@types/express": "^4.17.21",
-    "@types/node": "^20.12.7",
-    "eslint": "^8.57.0",
-    "globals": "^15.1.0",
-    "mysql2": "^3.9.7",
-    "nodemon": "^3.1.0",
-    "ts-node": "^10.9.2",
-    "tslog": "^4.9.2",
-    "typescript-eslint": "^7.7.1"
-  },
-  "type": "module"
+   "name": "typeorm-sample",
+   "version": "0.0.1",
+   "description": "Awesome project developed with TypeORM.",
+   "type": "module",
+   "devDependencies": {
+      "ts-node": "10.9.1",
+      "@types/node": "^16.11.10",
+      "typescript": "4.5.2"
+   },
+   "dependencies": {
+      "typeorm": "0.3.20",
+      "reflect-metadata": "^0.1.13",
+      "mysql": "^2.14.1",
+      "express": "^4.17.2",
+      "body-parser": "^1.19.1"
+   },
+   "scripts": {
+      "start": "node --loader ts-node/esm src/index.ts",
+      "typeorm": "typeorm-ts-node-esm"
+   }
 }
