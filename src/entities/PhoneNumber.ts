@@ -1,4 +1,4 @@
-import { Column, Entity, ManyToOne, PrimaryGeneratedColumn, Relation } from "typeorm";
+import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, Relation } from "typeorm";
 import { Person } from "./Person.js";
 
 enum NumberType {
@@ -24,6 +24,7 @@ export class PhoneNumber {
     @Column()
     lineNumber: number;
 
-    @ManyToOne(() => Person, (person) => person.phoneNumbers)
+    @OneToOne(() => Person)
+    @JoinColumn()
     person: Relation<Person>;
 }
