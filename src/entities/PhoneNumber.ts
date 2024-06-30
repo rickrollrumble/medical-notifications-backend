@@ -1,7 +1,7 @@
 import { Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn, Relation } from "typeorm";
 import { Person } from "./Person.js";
 
-enum NumberType {
+export enum NumberType {
     HOME = "home",
     MOBILE = "mobile",
     WORK = "work"
