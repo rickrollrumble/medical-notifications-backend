@@ -1,14 +1,20 @@
-import { Column, Entity, OneToMany, PrimaryGeneratedColumn, Relation } from "typeorm";
+import {
+  Column,
+  Entity,
+  OneToMany,
+  PrimaryGeneratedColumn,
+  Relation,
+} from "typeorm";
 import { Person } from "./Person.js";
 
 @Entity()
 export class Unit {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    name: string;
+  @Column()
+  name: string;
 
-    @OneToMany(() => Person, (person) => person.unit)
-    staff: Relation<Person>[];
+  @OneToMany(() => Person, (person) => person.unit)
+  staff: Relation<Person>[];
 }

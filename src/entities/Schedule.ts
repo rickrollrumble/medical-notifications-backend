@@ -1,29 +1,35 @@
-import { Column, Entity, OneToOne, PrimaryGeneratedColumn, Relation } from "typeorm";
+import {
+  Column,
+  Entity,
+  OneToOne,
+  PrimaryGeneratedColumn,
+  Relation,
+} from "typeorm";
 import { Person } from "./Person.js";
 
 @Entity()
 export class Schedule {
-    @PrimaryGeneratedColumn()
-    id: number;
+  @PrimaryGeneratedColumn()
+  id: number;
 
-    @Column()
-    startWorkDate: Date;
+  @Column()
+  startWorkDate: Date;
 
-    @Column()
-    startHour: number;
+  @Column()
+  startHour: number;
 
-    @Column()
-    endWorkDate: Date;
+  @Column()
+  endWorkDate: Date;
 
-    @Column()
-    endHour: number;
+  @Column()
+  endHour: number;
 
-    @Column()
-    isHoliday: boolean;
+  @Column()
+  isHoliday: boolean;
 
-    @Column()
-    isWeekend: boolean;
+  @Column()
+  isWeekend: boolean;
 
-    @OneToOne(()=>Person)
-    employee: Relation<Person>;
+  @OneToOne(() => Person)
+  employee: Relation<Person>;
 }

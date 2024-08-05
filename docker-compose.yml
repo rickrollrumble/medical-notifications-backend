@@ -1,15 +1,15 @@
-version: '3.7'
+version: "3.7"
 
 services:
-   mysql:
-     image: mysql:latest
-     volumes:
-       - mysql-data:/var/lib/mysql
-     ports:
+  mysql:
+    image: mysql:latest
+    volumes:
+      - mysql-data:/var/lib/mysql
+    ports:
       - "3306:3306"
-     environment:
-       MYSQL_ROOT_PASSWORD: password
-       MYSQL_DATABASE: medman-admin
+    environment:
+      MYSQL_ROOT_PASSWORD: password
+      MYSQL_DATABASE: medman-admin
 
 volumes:
   mysql-data:
